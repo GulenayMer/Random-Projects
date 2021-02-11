@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital@1&display=swap');
+
+* {
+    box-sizing: border-box;
+  }
+
+
+  /* -------------------- Custom Properties ------------------*/
+  :root {
+    --ff: 'Lato', sans-serif;
+  
+    /* primary */
+    --clr-violet: rgba(129, 69, 226);
+    --clr-darkGrayBlue: rgb(76, 111, 172);
+    --clr-darkerBlue: rgb(26, 39, 61);
+    --clr-white: rgb(237, 232, 232);
+
+
+  /* primary */
+  --clr-lightGray: rgb(250, 215, 215);
+ --clr-lightGrayBlue:rgb(236, 242, 248);
+
+
+    --fs-h1: 3rem;  /* font-size */
+    --fs-h2: 2.25rem;
+    --fs-h3: 1.25rem;
+    --fs-body: 1rem;
+
+    --bs: 0.25em 0.25em 0.75em rgba(0,0,0,.25),
+          0.125em 0.125em 0.25em rgba(0,0,0,.15);
+}
+
+
+body {
+text-align: center;
+font-family: var(--ff);
+line-height: 1.5;
+background-color: rgb(255, 238, 238, 0.9);
+margin: 0 1em;
+min-height:100vh;
+}
+
+
+/* --------- Mobile Version------------ */
+.allReviews {
+    display: grid;
+    /* grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));  */
+    grid-template-rows: repeat(5, minmax(400px, 1fr));
+    grid-gap: 20px;
+    padding: 1rem;
+  
+}
+
+.persons {
+    min-width: 100%;
+    min-height: 50vh;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid rgb(93, 92, 92);
+    box-shadow: var(--bs);
+    border: transparent;  
+
+        overflow: hidden;
+    
+    
+   
+    
+}
+
+.top {
+    position: relative;
+   
+}
+.persons img {
+    border-radius: 50%;
+    position: absolute;
+    left: 20px;
+    top: 30px;
+}
+
+.persons h3 {
+    position: absolute;
+    left: 90px;
+    top: 10px; 
+    opacity: 60%;
+}
+
+.persons .title {
+    position: absolute;
+    left: 90px;
+    top: 40px; 
+    opacity: 40%;
+}
+
+
+.main {
+    text-align: justify;
+    position: relative;
+   top: 100px;
+   left: 20px;
+   padding-right: 50px;
+}
+
+
+ .smallP {
+    opacity: 70%;
+    font-size: 1.05em;
+}
+
+
+.person1, .person5, .person2 .top,
+.person1, .person5, .person2 .main {
+    color: rgb(250, 250, 250);
+  
+}
+
+.person1 {
+    background-color: var(--clr-violet);
+    
+}
+
+.person2 {
+    background-color: var(--clr-darkGrayBlue);
+   
+}
+
+.person3 {
+    background-color: var(--clr-lightGray);
+ 
+}
+
+
+.person4 {
+    background-color: var(--clr-lightGrayBlue);
+}
+
+
+.person5 {
+    background-color: var(--clr-darkerBlue);
+}
+
+
+
+/* Desktop Version */
+
+  @media (min-width: 900px) {
+     body {
+        margin: 0 1em;
+        display: flex;
+        flex-direction:column; 
+        justify-content:center;
+        min-height:100vh;
+     }
+
+    .allReviews{ 
+
+        display: grid;
+        grid-template-columns: repeat(4, minmax(300px, 1fr));
+         grid-template-rows: minmax(100px, auto); 
+        grid-gap: 20px;
+    
+    
+    }
+
+
+    .person1 {
+     
+        grid-row: 1 / 2;
+        grid-column: 1 / 3;   
+    }
+    
+    .person2 {
+    
+        grid-row: 1 / 2;
+        grid-column: 3 / 4;
+    }
+    
+    .person3 {
+        grid-row: 1 / 3;
+        grid-column: 4 / 5;
+    }
+    
+    
+    .person4 {
+        grid-row: 2 / 3;
+        grid-column: 1 / 2;
+    
+    }
+    
+    
+    .person5 {
+        grid-row: 2 / 3;
+        grid-column: 2 / 4;
+    }
+  }
